@@ -322,35 +322,56 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
   ], { objectName: "a5-n", x: 0.6, y: 6.05, w: 10.4, h: 0.6, fontSize: 14, color: INK, valign: "middle" });
   s.addNotes("In Australia, we work with Stone Group Accounting Firm, supporting medical practices and SMEs. Everything runs in Xero. Xero Blue is the client's own books: this is where we keep the bookkeeping current and prepare the BAS every quarter. Xero Red is the accounting firm's side of Xero, which is linked to the ATO. The figures flow across automatically, the firm reviews the BAS, and the firm lodges it. We prepare; the firm always lodges.");
 
-  // ---------- 9. US & Singapore ----------
-  pres.addSection({ title: "US & Singapore" });
-  s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "US & Singapore" });
-  s.addText("United States & Singapore", { placeholder: "title" });
-  T(s, "Dedicated support built around the needs of small and mid-sized businesses.", {
-    objectName: "a1-sub", x: 0.6, y: 1.25, w: 12, h: 0.45, fontSize: 18, color: GRAY });
-  const mk = [
-    [fa.FaFlagUsa, "United States", "TAX & ADVISORY FOR SMEs", ["Tax return preparation and filing", "Tax and business consulting", "Support tailored to growing businesses"], NAVY],
-    [fa.FaGlobeAsia, "Singapore", "ACCOUNTING & REPORTING FOR SMEs", ["Bookkeeping in QuickBooks and Xero", "Accounting records kept accurate and up to date", "Annual financial statements prepared for the AGM"], BLUE],
-  ];
-  for (let i = 0; i < 2; i++) {
-    const x = 0.6 + i * 6.2, y = 1.95, w = 5.9, g = `a${i + 2}`;
-    shadowCard(s, g + "-c", x, y, w, 3.35);
-    await iconDot(s, g + "-d", mk[i][0], x + 0.35, y + 0.35, 0.95, mk[i][4]);
-    T(s, mk[i][1], { objectName: g + "-h", x: x + 1.55, y: y + 0.35, w: w - 1.8, h: 0.55, fontSize: 24, bold: true, color: NAVY });
-    T(s, mk[i][2], { objectName: g + "-s", x: x + 1.55, y: y + 0.9, w: w - 1.8, h: 0.35, fontSize: 13, bold: true, color: RED, charSpacing: 2 });
-    for (let j = 0; j < 3; j++) {
-      const yy = y + 1.6 + j * 0.55;
-      s.addImage({ objectName: `${g}-k${j}`, data: await icon(fa.FaCheckCircle, HEX.red), x: x + 0.4, y: yy + 0.08, w: 0.3, h: 0.3 });
-      T(s, mk[i][3][j], { objectName: `${g}-b${j}`, x: x + 0.9, y: yy, w: w - 1.2, h: 0.45, fontSize: 16, color: INK, valign: "middle" });
+  // ---------- 9-10. United States, Singapore ----------
+  // Market slide in the Canada style: services on the left, navy panel on the right.
+  const marketSlide = async (section, title, sub, services, serve, listTitle, list, notes) => {
+    pres.addSection({ title: section });
+    s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: section });
+    s.addText(title, { placeholder: "title" });
+    T(s, sub, { objectName: "a1-sub", x: 0.6, y: 1.25, w: 6.4, h: 0.45, fontSize: 18, color: GRAY });
+    for (let i = 0; i < services.length; i++) {
+      const y = 2.05 + i * 1.45;
+      await iconDot(s, `a${i + 2}-d`, services[i][0], 0.6, y, 0.95, i === services.length - 1 ? RED : NAVY);
+      T(s, [
+        { text: services[i][1], options: { bold: true, fontSize: 20, color: NAVY, breakLine: true } },
+        { text: services[i][2], options: { fontSize: 15, color: GRAY } },
+      ], { objectName: `a${i + 2}-t`, x: 1.8, y: y - 0.05, w: 5.1, h: 1.05, valign: "middle" });
     }
-  }
-  card(s, "a4-k", 0.6, 5.6, 12.1, 0.95, TINT);
-  await iconDot(s, "a4-d", fa.FaGlobeAmericas, 0.85, 5.72, 0.7, RED);
-  T(s, [
-    { text: "Same team, same standards: ", options: { bold: true, color: NAVY } },
-    { text: "the same care and quality our clients rely on, in every market we serve." },
-  ], { objectName: "a4-t", x: 1.75, y: 5.6, w: 10.8, h: 0.95, fontSize: 16, color: INK, valign: "middle" });
-  s.addNotes("We also serve the United States and Singapore. In the United States, we prepare and file taxes and offer tax and business consulting for small and mid-sized businesses. In Singapore, we keep SMEs' books in QuickBooks and Xero and prepare their annual financial statements, ready for the directors' review and the company's Annual General Meeting. It is the same team and the same standards in every market we serve.");
+    card(s, "a5-p", 7.2, 1.55, 5.5, 3.25 + (list.length - 1) * 0.8 + 0.66 + 0.3 - 1.55, NAVY);
+    T(s, "WHO WE SERVE", { objectName: "a5-h", x: 7.6, y: 1.85, w: 4.8, h: 0.35, fontSize: 13, bold: true, color: SKY, charSpacing: 2 });
+    T(s, serve, { objectName: "a5-t", x: 7.6, y: 2.2, w: 4.8, h: 0.4, fontSize: 17, bold: true, color: WHITE });
+    T(s, listTitle, { objectName: "a6-h", x: 7.6, y: 2.85, w: 4.8, h: 0.35, fontSize: 13, bold: true, color: SKY, charSpacing: 2 });
+    list.forEach((item, i) => {
+      const y = 3.25 + i * 0.8;
+      card(s, `a6-c${i}`, 7.6, y, 4.7, 0.66, WHITE);
+      T(s, item, { objectName: `a6-n${i}`, x: 7.85, y, w: 4.3, h: 0.66, fontSize: 15, bold: true, color: NAVY, valign: "middle" });
+    });
+    s.addNotes(notes);
+  };
+
+  await marketSlide("United States", "United States",
+    "Tax and advisory support for small and mid-sized businesses",
+    [
+      [fa.FaFileInvoiceDollar, "Tax Return Preparation & Filing", "Prepared accurately and filed on schedule"],
+      [fa.FaLightbulb, "Tax & Business Consulting", "Practical guidance for everyday decisions"],
+      [fa.FaChartLine, "Support That Scales", "Our help grows as the business grows"],
+    ],
+    "Small & mid-sized businesses (SMEs)",
+    "WHAT OUR CLIENTS GET",
+    ["One dedicated team for their tax needs", "Clear answers in plain language", "Deadlines tracked and met"],
+    "In the United States, we work with small and mid-sized businesses. We prepare and file their tax returns, and we provide tax and business consulting to help owners make sound decisions. Our clients get one dedicated team, clear answers in plain language, and deadlines that are tracked and met.");
+
+  await marketSlide("Singapore", "Singapore",
+    "Accounting and reporting for small and mid-sized businesses",
+    [
+      [fa.FaBook, "Bookkeeping in QuickBooks & Xero", "Books kept accurate and up to date"],
+      [fa.FaBalanceScale, "Accounting & Records", "Clean, reconciled accounts all year round"],
+      [fa.FaFileAlt, "Annual Financial Statements", "Prepared for directors' review and the AGM"],
+    ],
+    "Small & mid-sized businesses (SMEs)",
+    "SELECTED CLIENTS",
+    ["Samai Distillery Cambodia Pte., Ltd.", "Nurkas Holdings Pte. Ltd.", "Qwqer International Pte. Ltd.", "Tanncam Investment Pte. Ltd."],
+    "In Singapore, we support small and mid-sized businesses. We keep their books in QuickBooks and Xero, maintain clean, reconciled accounts throughout the year, and prepare their annual financial statements, ready for the directors' review and the company's Annual General Meeting. Our clients include Samai Distillery Cambodia, Nurkas Holdings, Qwqer International and Tanncam Investment.");
 
   // ---------- 10. We prepare, you file ----------
   pres.addSection({ title: "Working Together" });
