@@ -101,25 +101,24 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
   let s = pres.addSlide({ masterName: "Lotus Dark", sectionTitle: "Welcome" });
   card(s, "a1-logocard", 0.8, 0.75, 3.6, 1.05, WHITE);
   s.addImage({ objectName: "a1-logo", path: A("logo.png"), x: 1.05, y: 0.94, w: 3.1, h: 0.775 });
-  s.addText("Your Accounting & Tax Team in Vietnam", { placeholder: "title" });
-  s.addText("Introducing Lotus BPO Company Limited", { placeholder: "body" });
+  s.addText("Your Trusted Accounting & Tax Partner", { placeholder: "title" });
+  s.addText("Introducing Lotus BPO Company Limited · Ho Chi Minh City, Vietnam", { placeholder: "body" });
   T(s, [
     { text: "Presented to Moores Rowland International & Partner Firms", options: { bold: true, color: SKY, breakLine: true } },
     { text: "MRI Conference & AGM · Mövenpick Resort & Spa, Jimbaran, Bali · 23–25 October 2026", options: { color: MIST, fontSize: 14 } },
   ], { objectName: "a2-for", x: 0.8, y: 5.65, w: 9.5, h: 0.85, fontSize: 16, valign: "top", paraSpaceAfter: 4 });
-  s.addNotes("Good day everyone. Thank you to MRI for having us here in Bali. We are Lotus BPO, a company in Ho Chi Minh City, Vietnam. We help accounting firms in other countries with their bookkeeping and tax work. In the next few minutes we will show you who we are, what we do, and how we can work with your firm.");
+  s.addNotes("Good day, everyone, and thank you to MRI for having us here in Bali. We are Lotus BPO, an accounting and tax support company based in Ho Chi Minh City, Vietnam. Over the next few minutes, I will share who we are, the markets we serve, and how we can support your firm and your clients.");
 
   // ---------- 2. Who we are ----------
   pres.addSection({ title: "About Us" });
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "About Us" });
   s.addText("Who We Are", { placeholder: "title" });
   T(s, [
-    { text: "Lotus BPO is an accounting support company based in Ho Chi Minh City, Vietnam.", options: { breakLine: true } },
+    { text: "Lotus BPO is an accounting and tax support company based in Ho Chi Minh City, Vietnam.", options: { breakLine: true } },
     { text: " ", options: { breakLine: true, fontSize: 8 } },
-    { text: "We work behind the scenes for accounting firms abroad. We do the bookkeeping and draft the tax reports. Your firm reviews and files, and has more time for clients." },
-  ], { objectName: "a1-intro", x: 0.6, y: 1.55, w: 5.4, h: 2.3, fontSize: 18, color: INK, valign: "top" });
-  // leaders
-  T(s, "OUR LEADERS", { objectName: "a2-lh", x: 0.6, y: 4.15, w: 5.4, h: 0.35, fontSize: 12, bold: true, color: RED, charSpacing: 2 });
+    { text: "We act as an extension of your team, handling bookkeeping, tax preparation and financial clean-ups, so you can focus on advising clients and growing your practice." },
+  ], { objectName: "a1-intro", x: 0.6, y: 1.55, w: 5.4, h: 2.4, fontSize: 18, color: INK, valign: "top" });
+  T(s, "OUR LEADERSHIP", { objectName: "a2-lh", x: 0.6, y: 4.15, w: 5.4, h: 0.35, fontSize: 12, bold: true, color: RED, charSpacing: 2 });
   const leaders = [
     ["Nguyen Thi Phuong Hien", "General Director"],
     ["Anthony John Galliano", "Director"],
@@ -132,12 +131,11 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
       { text: leaders[i][1], options: { color: GRAY, fontSize: 14 } },
     ], { objectName: "a2-ldt" + i, x: 1.45, y, w: 4.5, h: 0.65, valign: "middle" });
   }
-  // stat tiles 2x2
   const stats = [
-    ["2024", "Year we started", "Registered in Vietnam on 15 October 2024"],
-    ["2", "Countries we serve", "Canada and Australia"],
-    ["3", "Accounting systems", "QuickBooks, CaseWare and Xero"],
-    ["6 yrs", "Longest file rebuilt", "A full rebuild, 2021 to 2026"],
+    ["2024", "Founded", "Registered in Ho Chi Minh City, Vietnam"],
+    ["4", "Markets served", "Canada, Australia, the US and Singapore"],
+    ["4", "Core platforms", "QuickBooks, Xero, CaseWare and CCH iFirm"],
+    ["6 yrs", "Largest rebuild", "Six years of records rebuilt, 2021–2026"],
   ];
   stats.forEach((st, i) => {
     const x = 6.75 + (i % 2) * 3.05, y = 1.55 + Math.floor(i / 2) * 2.55;
@@ -149,65 +147,95 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
   });
   T(s, "Enterprise No. 0318715056 · Ho Chi Minh City Business Registration Office", {
     objectName: "a4-reg", x: 0.6, y: 6.5, w: 9, h: 0.3, fontSize: 10, color: GRAY });
-  s.addNotes("Lotus BPO started in October 2024. We are a registered company in Ho Chi Minh City. Today we serve firms in two countries, Canada and Australia. We work every day in QuickBooks, CaseWare and Xero. Our biggest job so far was rebuilding six years of books for one client.");
+  s.addNotes("Lotus BPO was founded in 2024 and is registered in Ho Chi Minh City. We see ourselves as an extension of our clients' teams. We take care of the bookkeeping, tax preparation and clean-up work, so they can spend more time advising clients. Today we serve four markets: Canada, Australia, the United States and Singapore. Our team works every day in QuickBooks, Xero, CaseWare and CCH iFirm, and our largest project so far was rebuilding six years of financial records for a single client.");
 
   // ---------- 3. What we do ----------
   pres.addSection({ title: "Our Services" });
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Our Services" });
   s.addText("What We Do", { placeholder: "title" });
-  T(s, "Four simple services. One team you can count on.", {
-    objectName: "a1-sub", x: 0.6, y: 1.25, w: 10, h: 0.45, fontSize: 18, color: GRAY });
+  T(s, "End-to-end accounting and tax support, tailored to each market.", {
+    objectName: "a1-sub", x: 0.6, y: 1.25, w: 11, h: 0.45, fontSize: 18, color: GRAY });
   const svcs = [
-    [fa.FaBook, "Bookkeeping", "We keep your clients' books clean and up to date every month."],
-    [fa.FaFileInvoiceDollar, "T2 Return Drafts", "We draft Canadian T2 corporate returns. Your firm reviews and files."],
-    [fa.FaCalendarCheck, "BAS Drafts", "We draft quarterly BAS in Xero. Your firm reviews and lodges."],
-    [fa.FaTools, "Financial Rebuilds", "Missing or messy records? We rebuild the books, even years back."],
+    [fa.FaBook, "Bookkeeping & Accounting", "Accurate books in QuickBooks, Xero and CaseWare, plus year-end financial statements."],
+    [fa.FaFileInvoiceDollar, "Tax Return Preparation", "Canadian T2 and Australian BAS, prepared for your firm to review and submit."],
+    [fa.FaFlagUsa, "US Tax Filing", "Tax preparation and filing for small and mid-sized US businesses."],
+    [fa.FaLightbulb, "Tax & Business Consulting", "Practical guidance that helps US SMEs make sound decisions."],
+    [fa.FaTools, "Financial Reconstruction", "Catch-up and clean-up of incomplete records, even several years back."],
   ];
-  for (let i = 0; i < svcs.length; i++) {
-    const x = 0.6 + i * 3.08, y = 2.1, w = 2.78;
-    shadowCard(s, `a${i + 2}-c`, x, y, w, 3.7);
-    await iconDot(s, `a${i + 2}-d`, svcs[i][0], x + 0.35, y + 0.4, 1.0, i % 2 ? BLUE : NAVY);
-    T(s, svcs[i][1], { objectName: `a${i + 2}-h`, x: x + 0.35, y: y + 1.65, w: w - 0.6, h: 0.5, fontSize: 20, bold: true, color: NAVY });
-    T(s, svcs[i][2], { objectName: `a${i + 2}-t`, x: x + 0.35, y: y + 2.2, w: w - 0.6, h: 1.7, fontSize: 15, color: INK, valign: "top" });
+  for (let i = 0; i < 6; i++) {
+    const x = 0.6 + (i % 3) * 4.125, y = 1.95 + Math.floor(i / 3) * 2.45, w = 3.85, h = 2.2, g = `a${Math.floor(i / 3) + 2}`;
+    if (i === 5) {
+      card(s, g + "-c5", x, y, w, h, NAVY);
+      T(s, [
+        { text: "4 markets.", options: { fontSize: 28, bold: true, color: WHITE, breakLine: true } },
+        { text: "1 dedicated team.", options: { fontSize: 28, bold: true, color: SKY, breakLine: true } },
+        { text: "Canada · Australia · US · Singapore", options: { fontSize: 14, color: MIST } },
+      ], { objectName: g + "-t5", x: x + 0.35, y, w: w - 0.6, h, valign: "middle", paraSpaceAfter: 4 });
+      break;
+    }
+    shadowCard(s, `${g}-c${i}`, x, y, w, h);
+    await iconDot(s, `${g}-d${i}`, svcs[i][0], x + 0.3, y + 0.3, 0.8, i % 2 ? BLUE : NAVY);
+    T(s, svcs[i][1], { objectName: `${g}-h${i}`, x: x + 1.25, y: y + 0.3, w: w - 1.45, h: 0.8, fontSize: 18, bold: true, color: NAVY, valign: "middle" });
+    T(s, svcs[i][2], { objectName: `${g}-t${i}`, x: x + 0.3, y: y + 1.25, w: w - 0.55, h: 0.85, fontSize: 15, color: INK, valign: "top" });
   }
-  s.addNotes("Here is what we do. One: bookkeeping. Two: we draft Canadian T2 corporate tax returns. Three: we draft the Australian BAS every quarter. To be clear, we draft; your firm reviews and files. Four: financial rebuilds, when a client's records are missing or behind. We do the heavy lifting, you keep control.");
+  s.addNotes("Here is how we help. We keep accurate books in QuickBooks, Xero and CaseWare, and prepare year-end financial statements. We prepare Canadian T2 returns and Australian BAS for our partner firms to review and submit. For US small and mid-sized businesses, we handle tax filing and provide tax and business consulting. And when records are incomplete or behind, we rebuild them, even several years back. Four markets, one dedicated team.");
 
-  // ---------- 4. Where our clients are ----------
+  // ---------- 4. Global reach ----------
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Our Services" });
-  s.addText("Where Our Clients Are", { placeholder: "title" });
-  // hub
-  circle(s, "a1-hub", 0.9, 2.45, 2.6, NAVY);
-  s.addImage({ objectName: "a1-hubi", path: A("lotus-mark-white.png"), x: 1.45, y: 2.95, w: 1.5, h: 0.93 });
-  T(s, [{ text: "Our team", options: { breakLine: true, fontSize: 14, color: MIST } }, { text: "Vietnam", options: { fontSize: 22, bold: true, color: WHITE } }],
-    { objectName: "a1-hubt", x: 0.9, y: 3.95, w: 2.6, h: 0.8, align: "center" });
-  // arrows
-  s.addShape(pres.shapes.LINE, { objectName: "a2-l1", x: 3.6, y: 2.75, w: 1.5, h: 0.75, flipV: true, line: { color: SKY, width: 2.5, dashType: "dash", endArrowType: "triangle" } });
-  s.addShape(pres.shapes.LINE, { objectName: "a2-l2", x: 3.6, y: 4.2, w: 1.5, h: 0.75, line: { color: SKY, width: 2.5, dashType: "dash", endArrowType: "triangle" } });
+  s.addText("Our Global Reach", { placeholder: "title" });
+  circle(s, "a1-hub", 0.7, 2.6, 2.6, NAVY);
+  s.addImage({ objectName: "a1-hubi", path: A("lotus-mark-white.png"), x: 1.25, y: 3.1, w: 1.5, h: 0.93 });
+  T(s, [{ text: "One team in", options: { breakLine: true, fontSize: 14, color: MIST } }, { text: "Vietnam", options: { fontSize: 22, bold: true, color: WHITE } }],
+    { objectName: "a1-hubt", x: 0.7, y: 4.1, w: 2.6, h: 0.8, align: "center" });
+  s.addShape(pres.shapes.LINE, { objectName: "a2-l1", x: 3.4, y: 2.75, w: 1.3, h: 0.9, flipV: true, line: { color: SKY, width: 2.5, dashType: "dash", endArrowType: "triangle" } });
+  s.addShape(pres.shapes.LINE, { objectName: "a2-l2", x: 3.4, y: 4.25, w: 1.3, h: 0.9, line: { color: SKY, width: 2.5, dashType: "dash", endArrowType: "triangle" } });
   const regions = [
-    ["CANADA", "Alberta & Ontario", "Bookkeeping, T2 return drafts and financial rebuilds", "Professional Corporations and Corporations", fa.FaMapMarkerAlt],
-    ["AUSTRALIA", "Medical field", "Bookkeeping in Xero and quarterly BAS drafts", "Doctors and medical practices", fa.FaMapMarkerAlt],
+    ["CANADA", "Alberta & Ontario", "Bookkeeping, T2 preparation, financial reconstruction", "Professional corporations, corporations & SMEs"],
+    ["AUSTRALIA", "Healthcare & SMEs", "Xero bookkeeping, quarterly BAS preparation", "Medical practices & SMEs"],
+    ["UNITED STATES", "Tax & advisory", "Tax filing, tax & business consulting", "Small & mid-sized businesses"],
+    ["SINGAPORE", "Accounting & reporting", "Bookkeeping in QuickBooks & Xero, annual financial statements for the AGM", "Small & mid-sized businesses"],
   ];
-  for (let i = 0; i < 2; i++) {
-    const y = 1.55 + i * 2.65, x = 5.3;
-    card(s, `a${3 + i}-c`, x, y, 7.4, 2.35, TINT);
-    await iconDot(s, `a${3 + i}-d`, regions[i][4], x + 0.35, y + 0.35, 0.75, RED);
-    T(s, regions[i][0], { objectName: `a${3 + i}-h`, x: x + 1.3, y: y + 0.35, w: 3, h: 0.45, fontSize: 24, bold: true, color: NAVY, charSpacing: 1 });
-    T(s, regions[i][1], { objectName: `a${3 + i}-s`, x: x + 1.3, y: y + 0.8, w: 5.8, h: 0.35, fontSize: 15, bold: true, color: RED });
+  for (let i = 0; i < 4; i++) {
+    const x = 4.9 + (i % 2) * 3.97, y = 1.55 + Math.floor(i / 2) * 2.55, w = 3.75, g = `a${3 + i}`;
+    card(s, g + "-c", x, y, w, 2.3, TINT);
+    await iconDot(s, g + "-d", fa.FaMapMarkerAlt, x + 0.25, y + 0.25, 0.6, RED);
+    T(s, regions[i][0], { objectName: g + "-h", x: x + 1.0, y: y + 0.22, w: w - 1.1, h: 0.4, fontSize: 19, bold: true, color: NAVY, charSpacing: 1 });
+    T(s, regions[i][1], { objectName: g + "-s", x: x + 1.0, y: y + 0.6, w: w - 1.1, h: 0.3, fontSize: 14, bold: true, color: RED });
     T(s, [
-      { text: "What we do: ", options: { bold: true, color: NAVY } }, { text: regions[i][2], options: { breakLine: true } },
-      { text: "Who we serve: ", options: { bold: true, color: NAVY } }, { text: regions[i][3] },
-    ], { objectName: `a${3 + i}-t`, x: x + 1.3, y: y + 1.25, w: 5.8, h: 0.9, fontSize: 15, color: INK, paraSpaceAfter: 4, valign: "top" });
+      { text: "Services: ", options: { bold: true, color: NAVY } }, { text: regions[i][2], options: { breakLine: true } },
+      { text: "Clients: ", options: { bold: true, color: NAVY } }, { text: regions[i][3] },
+    ], { objectName: g + "-t", x: x + 0.25, y: y + 1.05, w: w - 0.45, h: 1.15, fontSize: 14, color: INK, paraSpaceAfter: 4, valign: "top" });
   }
-  s.addNotes("Our team is in Vietnam. Our clients are in Canada, in Alberta and Ontario, and in Australia. In Canada we work with Professional Corporations and regular corporations. In Australia our clients are doctors and medical practices.");
+  s.addNotes("From one team in Vietnam, we now serve four markets. In Canada, mainly Alberta and Ontario, we support professional corporations, corporations and SMEs. In Australia, we work with medical practices and SMEs. In the United States, we provide tax filing and consulting for small and mid-sized businesses. And in Singapore, we handle bookkeeping in QuickBooks and Xero and prepare annual financial statements for the AGM.");
 
-  // ---------- 5. Canada ----------
+  // ---------- 5. Who we serve ----------
+  s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Our Services" });
+  s.addText("Who We Serve", { placeholder: "title" });
+  T(s, "From accounting firms to growing businesses, our support fits the way you work.", {
+    objectName: "a1-sub", x: 0.6, y: 1.25, w: 12, h: 0.45, fontSize: 18, color: GRAY });
+  const who = [
+    [fa.FaBriefcase, "Accounting Firms", "We work as your back office, under your name and your quality standards."],
+    [fa.FaStore, "SMEs & Corporations", "Small and mid-sized businesses and incorporated companies in all four markets."],
+    [fa.FaTooth, "Professional Corporations", "Dental and other professional corporations across Canada."],
+    [fa.FaUserMd, "Medical Practices", "Doctors and clinics in Australia, supported every quarter."],
+  ];
+  for (let i = 0; i < who.length; i++) {
+    const x = 0.6 + i * 3.08, y = 2.05, w = 2.78;
+    shadowCard(s, `a${i + 2}-c`, x, y, w, 3.6);
+    await iconDot(s, `a${i + 2}-d`, who[i][0], x + 0.35, y + 0.4, 1.0, i % 2 ? BLUE : NAVY);
+    T(s, who[i][1], { objectName: `a${i + 2}-h`, x: x + 0.35, y: y + 1.6, w: w - 0.55, h: 0.75, fontSize: 19, bold: true, color: NAVY, valign: "top" });
+    T(s, who[i][2], { objectName: `a${i + 2}-t`, x: x + 0.35, y: y + 2.35, w: w - 0.6, h: 1.4, fontSize: 15, color: INK, valign: "top" });
+  }
+  s.addNotes("Who do we serve? First, accounting firms, for whom we act as a back office under their own name and standards. Second, small and mid-sized businesses and corporations in all four markets. Third, professional corporations in Canada, including dental practices. And fourth, doctors and clinics in Australia.");
+
+  // ---------- 6. Canada ----------
   pres.addSection({ title: "Canada" });
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Canada" });
-  s.addText("Canada: Our Work", { placeholder: "title" });
+  s.addText("Canada", { placeholder: "title" });
   const ca = [
-    [fa.FaBook, "Bookkeeping", "In QuickBooks and CaseWare"],
-    [fa.FaFileInvoiceDollar, "T2 Return Drafts", "We draft the T2. Your firm reviews and files it."],
-    [fa.FaTools, "Financial Rebuilds", "When records are missing or years behind"],
+    [fa.FaBook, "Bookkeeping & Accounting", "In QuickBooks and CaseWare"],
+    [fa.FaFileInvoiceDollar, "T2 Return Preparation", "We prepare the T2; your firm reviews and files it"],
+    [fa.FaTools, "Financial Reconstruction", "Bringing incomplete or overdue records up to date"],
   ];
   for (let i = 0; i < ca.length; i++) {
     const y = 1.6 + i * 1.5;
@@ -215,68 +243,66 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
     T(s, [
       { text: ca[i][1], options: { bold: true, fontSize: 20, color: NAVY, breakLine: true } },
       { text: ca[i][2], options: { fontSize: 15, color: GRAY } },
-    ], { objectName: `a${i + 1}-t`, x: 1.8, y: y - 0.05, w: 5.0, h: 1.05, valign: "middle" });
+    ], { objectName: `a${i + 1}-t`, x: 1.8, y: y - 0.05, w: 5.1, h: 1.05, valign: "middle" });
   }
-  // right panel
   card(s, "a4-p", 7.2, 1.55, 5.5, 4.95, NAVY);
-  T(s, "WHO WE SERVE", { objectName: "a4-h", x: 7.6, y: 1.9, w: 4.8, h: 0.35, fontSize: 13, bold: true, color: SKY, charSpacing: 2 });
+  T(s, "WHO WE SERVE", { objectName: "a4-h", x: 7.6, y: 1.85, w: 4.8, h: 0.35, fontSize: 13, bold: true, color: SKY, charSpacing: 2 });
   T(s, [
-    { text: "Professional Corporations", options: { bullet: true, breakLine: true } },
-    { text: "Corporations (legal companies)", options: { bullet: true } },
-  ], { objectName: "a4-t", x: 7.6, y: 2.3, w: 4.8, h: 0.95, fontSize: 17, color: WHITE, paraSpaceAfter: 6, valign: "top" });
-  T(s, "OUR CANADIAN PARTNERS", { objectName: "a5-h", x: 7.6, y: 3.3, w: 4.8, h: 0.35, fontSize: 13, bold: true, color: SKY, charSpacing: 2 });
+    { text: "Professional corporations", options: { bullet: true, breakLine: true } },
+    { text: "Incorporated companies", options: { bullet: true, breakLine: true } },
+    { text: "Small & mid-sized enterprises (SMEs)", options: { bullet: true } },
+  ], { objectName: "a4-t", x: 7.6, y: 2.22, w: 4.8, h: 1.15, fontSize: 16, color: WHITE, paraSpaceAfter: 4, valign: "top" });
+  T(s, "OUR CANADIAN PARTNERS", { objectName: "a5-h", x: 7.6, y: 3.5, w: 4.8, h: 0.35, fontSize: 13, bold: true, color: SKY, charSpacing: 2 });
   const partners = [
-    ["Opty Business Solutions Inc.", "We draft T2s in their CCH iFirm. Opty files."],
-    ["Harry Chang, CA", "We draft T2s in an Excel workbook. They file in their own system."],
+    ["Opty Business Solutions Inc.", "We prepare T2s in their CCH iFirm; Opty files."],
+    ["Harry Chang, CA", "We prepare an Excel T2 workbook; they file in their own system."],
   ];
   partners.forEach((p, i) => {
-    const y = 3.72 + i * 1.08;
-    card(s, `a5-pc${i}`, 7.6, y, 4.7, 0.95, WHITE);
+    const y = 3.9 + i * 1.03;
+    card(s, `a5-pc${i}`, 7.6, y, 4.7, 0.92, WHITE);
     T(s, [
       { text: p[0], options: { bold: true, fontSize: 16, color: NAVY, breakLine: true } },
       { text: p[1], options: { fontSize: 13, color: GRAY } },
-    ], { objectName: `a5-pt${i}`, x: 7.85, y, w: 4.3, h: 0.95, valign: "middle" });
+    ], { objectName: `a5-pt${i}`, x: 7.85, y, w: 4.3, h: 0.92, valign: "middle" });
   });
-  T(s, "New clients keep coming through these firms.", { objectName: "a5-n", x: 7.6, y: 5.95, w: 4.8, h: 0.35, fontSize: 14, italic: true, color: MIST });
-  s.addNotes("In Canada, we do bookkeeping in QuickBooks and CaseWare. We draft the T2 corporate tax returns each year, but we do not file them. With Opty, we draft the T2 inside their CCH iFirm system and Opty files. With Harry Chang, we prepare an Excel T2 workbook and they file it in their own system. We also rebuild financial records when needed. We work through two Canadian partners: Opty Business Solutions and Harry Chang, Chartered Accountant. New clients come to us through them all the time, both Professional Corporations and regular corporations.");
+  T(s, "A steady flow of new clients through both firms.", { objectName: "a5-n", x: 7.6, y: 5.98, w: 4.8, h: 0.35, fontSize: 14, italic: true, color: MIST });
+  s.addNotes("In Canada, we keep the books in QuickBooks and CaseWare, prepare T2 corporate returns, and rebuild records that are incomplete or overdue. Our clients include professional corporations, incorporated companies and SMEs. We work through two partner firms. With Opty Business Solutions, we prepare the T2 inside their CCH iFirm and Opty files it. With Harry Chang, Chartered Accountant, we prepare an Excel T2 workbook and they file it in their own system. Both firms bring us a steady flow of new clients.");
 
-  // ---------- 6. Case story ----------
+  // ---------- 7. Case story ----------
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Canada" });
-  s.addText("Case Story: 6 Years Rebuilt", { placeholder: "title" });
+  s.addText("Case Study: Six Years Rebuilt", { placeholder: "title" });
   T(s, "Client: A Dentistry Professional Corporation in Canada", {
     objectName: "a1-sub", x: 0.6, y: 1.25, w: 10, h: 0.45, fontSize: 18, color: GRAY });
-  // timeline
   const yrs = [2021, 2022, 2023, 2024, 2025, 2026];
   s.addShape(pres.shapes.LINE, { objectName: "a2-tl", x: 1.2, y: 2.55, w: 10.9, h: 0, line: { color: MIST, width: 4 } });
   yrs.forEach((yr, i) => {
     const x = 0.85 + i * 2.18;
-    circle(s, `a${2}-y${i}`, x + 0.17, 2.2, 0.7, i === yrs.length - 1 ? RED : NAVY);
+    circle(s, `a2-y${i}`, x + 0.17, 2.2, 0.7, i === yrs.length - 1 ? RED : NAVY);
     T(s, "✓", { objectName: `a2-yc${i}`, x: x + 0.17, y: 2.2, w: 0.7, h: 0.7, fontSize: 20, bold: true, color: WHITE, align: "center", valign: "middle" });
     T(s, String(yr), { objectName: `a2-yt${i}`, x: x - 0.2, y: 3.0, w: 1.45, h: 0.4, fontSize: 18, bold: true, color: NAVY, align: "center" });
   });
   const story = [
-    ["The Need", "Six years of books, from 2021 to 2026, had to be rebuilt from the start."],
-    ["What We Did", "We gathered the records, rebuilt the books year by year and matched every account."],
-    ["The Result", "Complete, clean records for every year, ready for the accountant and the tax filings."],
+    ["The Challenge", "Six years of financial records, from 2021 to 2026, had to be rebuilt from the ground up."],
+    ["Our Approach", "We gathered the source documents, rebuilt the books year by year and reconciled every account."],
+    ["The Outcome", "Complete, reliable records for every year, ready for the accountant's review and tax filing."],
   ];
   for (let i = 0; i < 3; i++) {
     const x = 0.6 + i * 4.1;
     card(s, `a${3 + i}-c`, x, 3.85, 3.8, 2.3, i === 2 ? NAVY : TINT);
     T(s, story[i][0], { objectName: `a${3 + i}-h`, x: x + 0.3, y: 4.1, w: 3.2, h: 0.45, fontSize: 20, bold: true, color: i === 2 ? WHITE : RED });
-    T(s, story[i][1], { objectName: `a${3 + i}-t`, x: x + 0.3, y: 4.6, w: 3.2, h: 1.7, fontSize: 15, color: i === 2 ? WHITE : INK, valign: "top" });
+    T(s, story[i][1], { objectName: `a${3 + i}-t`, x: x + 0.3, y: 4.6, w: 3.2, h: 1.45, fontSize: 15, color: i === 2 ? WHITE : INK, valign: "top" });
   }
-  s.addNotes("Here is a recent example. A dentistry Professional Corporation in Canada needed six years of books rebuilt, from 2021 to 2026. We collected the records, rebuilt each year, and matched every account. The client now has clean, complete records, ready for the accountant and for tax filing. If your firm has clients who are behind, we can help.");
+  s.addNotes("Here is one recent project. A dentistry professional corporation in Canada needed six years of records, from 2021 to 2026, rebuilt from the ground up. We gathered the source documents, rebuilt the books year by year and reconciled every account. The result: complete, reliable records for every year, ready for the accountant's review and tax filing. If your firm has clients who have fallen behind, this is exactly where we can help.");
 
-  // ---------- 7. Australia ----------
+  // ---------- 8. Australia ----------
   pres.addSection({ title: "Australia" });
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Australia" });
-  s.addText("Australia: Our Work", { placeholder: "title" });
-  T(s, "Partner firm: Stone Group Accounting Firm  ·  Our clients: doctors and medical practices", {
+  s.addText("Australia", { placeholder: "title" });
+  T(s, "Partner firm: Stone Group Accounting Firm  ·  Clients: medical practices and SMEs", {
     objectName: "a1-sub", x: 0.6, y: 1.25, w: 12, h: 0.45, fontSize: 18, color: GRAY });
-  // flow: Xero Blue -> Xero Red -> ATO
   const flow = [
-    [fa.FaBook, "Xero Blue", "The client's books", "We do the bookkeeping and draft the BAS every quarter.", BLUE, "LOTUS BPO DOES THIS"],
-    [fa.FaCalculator, "Xero Red", "The firm's tax side", "The figures flow across automatically. The firm reviews the BAS.", RED, "YOUR FIRM DOES THIS"],
+    [fa.FaBook, "Xero Blue", "The client's books", "We keep the books and prepare the BAS every quarter.", BLUE, "LOTUS BPO"],
+    [fa.FaCalculator, "Xero Red", "The firm's tax side", "Figures flow across automatically. The firm reviews the BAS.", RED, "YOUR FIRM"],
     [fa.FaLandmark, "ATO", "Australian Taxation Office", "The firm lodges the BAS. We never lodge on our own.", NAVY, ""],
   ];
   for (let i = 0; i < flow.length; i++) {
@@ -291,18 +317,48 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
       s.addShape(pres.shapes.RIGHT_ARROW, { objectName: `a${i + 3}-ar`, x: x + w + 0.08, y: y + 1.5, w: 0.34, h: 0.45, fill: { color: SKY }, line: { type: "none" } });
   }
   T(s, [
-    { text: "Simply put: ", options: { bold: true, color: NAVY } },
-    { text: "Xero Blue is where the client's books live. Xero Red is the accounting firm's side of Xero, linked to the tax office." },
+    { text: "In short: ", options: { bold: true, color: NAVY } },
+    { text: "Xero Blue is where the client's books live. Xero Red is the accounting firm's side of Xero, linked to the ATO." },
   ], { objectName: "a5-n", x: 0.6, y: 6.05, w: 10.4, h: 0.6, fontSize: 14, color: INK, valign: "middle" });
-  s.addNotes("In Australia we work with Stone Group Accounting Firm, and our clients are doctors and medical practices. We work in Xero. Xero Blue is the client's own books: that is where we do the bookkeeping and draft the BAS every quarter. Xero Red is the accounting firm's side of Xero, which is linked to the tax office. The figures flow across, the firm reviews the BAS, and the firm lodges it with the ATO. We draft; we never lodge on our own.");
+  s.addNotes("In Australia, we work with Stone Group Accounting Firm, supporting medical practices and SMEs. Everything runs in Xero. Xero Blue is the client's own books: this is where we keep the bookkeeping current and prepare the BAS every quarter. Xero Red is the accounting firm's side of Xero, which is linked to the ATO. The figures flow across automatically, the firm reviews the BAS, and the firm lodges it. We prepare; the firm always lodges.");
 
-  // ---------- 8. We draft, you file ----------
+  // ---------- 9. US & Singapore ----------
+  pres.addSection({ title: "US & Singapore" });
+  s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "US & Singapore" });
+  s.addText("United States & Singapore", { placeholder: "title" });
+  T(s, "Dedicated support built around the needs of small and mid-sized businesses.", {
+    objectName: "a1-sub", x: 0.6, y: 1.25, w: 12, h: 0.45, fontSize: 18, color: GRAY });
+  const mk = [
+    [fa.FaFlagUsa, "United States", "TAX & ADVISORY FOR SMEs", ["Tax return preparation and filing", "Tax and business consulting", "Support tailored to growing businesses"], NAVY],
+    [fa.FaGlobeAsia, "Singapore", "ACCOUNTING & REPORTING FOR SMEs", ["Bookkeeping in QuickBooks and Xero", "Accounting records kept accurate and up to date", "Annual financial statements prepared for the AGM"], BLUE],
+  ];
+  for (let i = 0; i < 2; i++) {
+    const x = 0.6 + i * 6.2, y = 1.95, w = 5.9, g = `a${i + 2}`;
+    shadowCard(s, g + "-c", x, y, w, 3.35);
+    await iconDot(s, g + "-d", mk[i][0], x + 0.35, y + 0.35, 0.95, mk[i][4]);
+    T(s, mk[i][1], { objectName: g + "-h", x: x + 1.55, y: y + 0.35, w: w - 1.8, h: 0.55, fontSize: 24, bold: true, color: NAVY });
+    T(s, mk[i][2], { objectName: g + "-s", x: x + 1.55, y: y + 0.9, w: w - 1.8, h: 0.35, fontSize: 13, bold: true, color: RED, charSpacing: 2 });
+    for (let j = 0; j < 3; j++) {
+      const yy = y + 1.6 + j * 0.55;
+      s.addImage({ objectName: `${g}-k${j}`, data: await icon(fa.FaCheckCircle, HEX.red), x: x + 0.4, y: yy + 0.08, w: 0.3, h: 0.3 });
+      T(s, mk[i][3][j], { objectName: `${g}-b${j}`, x: x + 0.9, y: yy, w: w - 1.2, h: 0.45, fontSize: 16, color: INK, valign: "middle" });
+    }
+  }
+  card(s, "a4-k", 0.6, 5.6, 12.1, 0.95, TINT);
+  await iconDot(s, "a4-d", fa.FaGlobeAmericas, 0.85, 5.72, 0.7, RED);
+  T(s, [
+    { text: "Same team, same standards: ", options: { bold: true, color: NAVY } },
+    { text: "the same care and quality our clients rely on, in every market we serve." },
+  ], { objectName: "a4-t", x: 1.75, y: 5.6, w: 10.8, h: 0.95, fontSize: 16, color: INK, valign: "middle" });
+  s.addNotes("We also serve the United States and Singapore. In the United States, we prepare and file taxes and offer tax and business consulting for small and mid-sized businesses. In Singapore, we keep SMEs' books in QuickBooks and Xero and prepare their annual financial statements, ready for the directors' review and the company's Annual General Meeting. It is the same team and the same standards in every market we serve.");
+
+  // ---------- 10. We prepare, you file ----------
   pres.addSection({ title: "Working Together" });
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Working Together" });
-  s.addText("We Draft. You File.", { placeholder: "title" });
-  T(s, "How it works today with each of our partner firms", {
+  s.addText("We Prepare. You File.", { placeholder: "title" });
+  T(s, "How we work alongside our accounting-firm partners today", {
     objectName: "a1-sub", x: 0.6, y: 1.25, w: 10, h: 0.45, fontSize: 18, color: GRAY });
-  const cols = [[0.6, 3.6, "PARTNER FIRM"], [4.4, 4.1, "WHAT LOTUS BPO DRAFTS"], [8.7, 4.0, "WHO FILES"]];
+  const cols = [[0.6, 3.6, "PARTNER FIRM"], [4.4, 4.1, "WHAT LOTUS BPO PREPARES"], [8.7, 4.0, "WHO FILES"]];
   cols.forEach((c, i) => T(s, c[2], { objectName: "a2-ch" + i, x: c[0] + 0.25, y: 1.9, w: c[1], h: 0.3, fontSize: 12, bold: true, color: i === 2 ? RED : BLUE, charSpacing: 2 }));
   const rows = [
     ["Opty Business Solutions Inc.", "Canada", "T2 return, prepared in their CCH iFirm", "Opty reviews and files"],
@@ -322,49 +378,48 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
   card(s, "a6-k", 0.6, 5.6, 12.1, 0.95, NAVY);
   await iconDot(s, "a6-d", fa.FaCheckCircle, 0.85, 5.72, 0.7, RED);
   T(s, [
-    { text: "To be clear: ", options: { bold: true, color: WHITE } },
-    { text: "we draft the tax reports, but we never file or lodge them ourselves. Your firm always checks and submits.", options: { color: MIST } },
+    { text: "Our commitment: ", options: { bold: true, color: WHITE } },
+    { text: "when we work through an accounting firm, we prepare and the firm reviews and submits. The final sign-off is always yours.", options: { color: MIST } },
   ], { objectName: "a6-t", x: 1.75, y: 5.6, w: 10.8, h: 0.95, fontSize: 16, valign: "middle" });
-  s.addNotes("We want to be open about this. We draft the tax reports, but we do not file them. With Opty, we draft the T2 in their CCH iFirm and Opty files it. With Harry Chang, we prepare an Excel T2 workbook and they file it in their own system. With Stone Group in Australia, we draft the BAS in Xero and Stone Group lodges it. Your firm always has the final say.");
+  s.addNotes("We want to be fully transparent about our role. When we work through an accounting firm, we prepare the tax reports and the firm reviews and submits them. With Opty, we prepare the T2 in their CCH iFirm and Opty files it. With Harry Chang, we prepare an Excel T2 workbook and they file it in their own system. With Stone Group, we prepare the BAS in Xero and Stone Group lodges it. The final sign-off always stays with the firm.");
 
-  // ---------- 9. How we work ----------
+  // ---------- 11. How we work ----------
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Working Together" });
   s.addText("How We Work With Your Firm", { placeholder: "title" });
   const steps = [
-    [fa.FaComments, "Talk", "We learn what you and your clients need."],
-    [fa.FaKey, "Set Up", "You give us access to the files and software."],
-    [fa.FaLaptop, "We Do the Work", "Our team does the books and drafts the tax reports."],
-    [fa.FaSearch, "You Review", "Your team checks and signs off."],
-    [fa.FaPaperPlane, "You File", "You file from your own system and keep the client."],
+    [fa.FaComments, "Discover", "We learn your needs, systems and deadlines."],
+    [fa.FaKey, "Onboard", "Secure access to your files and software is set up."],
+    [fa.FaLaptop, "Prepare", "Our team completes the books and prepares the tax reports."],
+    [fa.FaSearch, "Review", "Your team checks and approves the work."],
+    [fa.FaPaperPlane, "Submit", "You file from your own system and keep the client."],
   ];
   for (let i = 0; i < steps.length; i++) {
-    const x = 0.6 + i * 2.48;
-    const g = `a${i + 1}`;
+    const x = 0.6 + i * 2.48, g = `a${i + 1}`;
     if (i < steps.length - 1)
       s.addShape(pres.shapes.LINE, { objectName: g + "-ln", x: x + 1.45, y: 2.25, w: 1.5, h: 0, line: { color: SKY, width: 2, dashType: "dash" } });
     await iconDot(s, g + "-d", steps[i][0], x + 0.5, 1.65, 1.2, i === 2 ? RED : NAVY);
     T(s, `STEP ${i + 1}`, { objectName: g + "-n", x, y: 3.0, w: 2.2, h: 0.3, fontSize: 12, bold: true, color: RED, align: "center", charSpacing: 2 });
     T(s, steps[i][1], { objectName: g + "-h", x, y: 3.3, w: 2.2, h: 0.5, fontSize: 19, bold: true, color: NAVY, align: "center" });
-    T(s, steps[i][2], { objectName: g + "-t", x: x + 0.05, y: 3.85, w: 2.1, h: 1.0, fontSize: 14, color: INK, align: "center", valign: "top" });
+    T(s, steps[i][2], { objectName: g + "-t", x: x + 0.05, y: 3.85, w: 2.1, h: 1.1, fontSize: 14, color: INK, align: "center", valign: "top" });
   }
   card(s, "a6-k", 0.6, 5.35, 12.1, 1.15, TINT);
   await iconDot(s, "a6-d", fa.FaHandshake, 0.9, 5.52, 0.8, RED);
   T(s, [
     { text: "Humans in the lead. ", options: { bold: true, color: NAVY } },
-    { text: "Real accountants do the work, your team makes the final call, and your clients stay your clients." },
+    { text: "Skilled accountants do the work, your team makes the final call, and your clients remain yours." },
   ], { objectName: "a6-t", x: 1.95, y: 5.35, w: 10.5, h: 1.15, fontSize: 17, color: INK, valign: "middle" });
-  s.addNotes("Working with us is simple. First, we talk and learn your needs. Second, you give us access to the files and software. Third, we do the books and draft the tax reports. Fourth, your team reviews and signs off. Fifth, you file from your own system. This fits the theme of this conference, Humans in the Lead: real people do the work, your team makes the final call, and your clients stay your clients.");
+  s.addNotes("Working with us follows five simple steps. Discover: we learn your needs, systems and deadlines. Onboard: we set up secure access to your files and software. Prepare: our team completes the books and prepares the tax reports. Review: your team checks and approves. Submit: you file from your own system and keep the client relationship. This reflects the theme of this conference, Humans in the Lead: skilled accountants do the work, your team makes the final call, and your clients remain yours.");
 
-  // ---------- 9. Why us ----------
+  // ---------- 12. Why us ----------
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Working Together" });
   s.addText("Why Partner With Lotus BPO", { placeholder: "title" });
   const why = [
-    [fa.FaPiggyBank, "Lower Costs", "Get quality work at a lower cost than hiring locally."],
-    [fa.FaMoon, "Work Done Overnight", "Vietnam's time zone means work moves while you sleep."],
-    [fa.FaDesktop, "We Know Your Software", "QuickBooks, CaseWare and Xero, used every day."],
-    [fa.FaChartLine, "Grow Without Hiring", "Take on more clients in busy season with no new staff."],
-    [fa.FaUserShield, "Care With Your Data", "Client files are handled with care and kept private."],
-    [fa.FaHandshake, "Proven Partnerships", "Trusted today by firms in Canada and Australia."],
+    [fa.FaPiggyBank, "Cost Efficiency", "Skilled work at a lower cost than hiring locally."],
+    [fa.FaMoon, "Faster Turnaround", "Our time zone keeps work moving while your office is closed."],
+    [fa.FaDesktop, "Platform Ready", "Fluent in QuickBooks, Xero, CaseWare and CCH iFirm."],
+    [fa.FaChartLine, "Scale on Demand", "Handle busy-season peaks without adding headcount."],
+    [fa.FaUserShield, "Confidentiality First", "Client data handled with care and kept private."],
+    [fa.FaGlobeAsia, "Proven in Four Markets", "Trusted in Canada, Australia, the US and Singapore."],
   ];
   for (let i = 0; i < why.length; i++) {
     const col = i % 2, row = Math.floor(i / 2);
@@ -375,28 +430,16 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
       { text: why[i][2], options: { fontSize: 15, color: INK } },
     ], { objectName: `a${row + 1}-t${col}`, x: x + 1.2, y: y - 0.1, w: 4.65, h: 1.2, valign: "middle" });
   }
-  s.addNotes("Why work with us? Lower costs. Work done overnight thanks to the time difference. We already use your software every day. You can grow in busy season without hiring. We take care with client data. And firms in Canada and Australia already trust us.");
+  s.addNotes("Why partner with us? Cost efficiency: skilled work at a lower cost than hiring locally. Faster turnaround: thanks to the time difference, work keeps moving while your office is closed. Platform ready: we already work in QuickBooks, Xero, CaseWare and CCH iFirm. Scale on demand: handle busy season without adding headcount. Confidentiality first: your client data is handled with care. And we are proven in four markets.");
 
-  // ---------- 10. New office ----------
-  pres.addSection({ title: "Our Office" });
-  s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Our Office" });
-  s.addText("Our New Office", { placeholder: "title" });
-  T(s, "Opened on August 10, 2026 in Ho Chi Minh City, with room for our growing team.", {
-    objectName: "a1-sub", x: 0.6, y: 1.25, w: 12, h: 0.45, fontSize: 18, color: GRAY });
-  // photos 4:3
-  const pw = 5.9, ph = pw * 0.75;
-  s.addImage({ objectName: "a2-p1", path: A("office-1.jpg"), x: 0.6, y: 1.95, w: pw, h: ph * 0.95, sizing: { type: "cover", w: pw, h: ph * 0.95 }, rounding: false });
-  s.addImage({ objectName: "a3-p2", path: A("office-2.jpg"), x: 6.8, y: 1.95, w: pw, h: ph * 0.95, sizing: { type: "cover", w: pw, h: ph * 0.95 } });
-  s.addNotes("This is our new office in Ho Chi Minh City. We signed and moved in on August 10, 2026. It gives our team more space to grow as we take on more clients.");
-
-  // ---------- 11. Let's work together ----------
+  // ---------- 13. Let's work together ----------
   pres.addSection({ title: "Next Steps" });
   s = pres.addSlide({ masterName: "Lotus Content", sectionTitle: "Next Steps" });
   s.addText("Let's Work Together", { placeholder: "title" });
   const next = [
-    [fa.FaCoffee, "Meet Us in Bali", "Find us at the coffee breaks. We would love to hear about your firm."],
-    [fa.FaFolderOpen, "Start Small", "Begin with a few client files and see how we work."],
-    [fa.FaSeedling, "Grow Together", "Add more clients and services as trust builds."],
+    [fa.FaCoffee, "Meet Us in Bali", "Let's talk over coffee during the conference breaks."],
+    [fa.FaFolderOpen, "Start With a Pilot", "Begin with a few client files and see our quality first-hand."],
+    [fa.FaSeedling, "Grow Together", "Expand the scope as trust and volume grow."],
   ];
   for (let i = 0; i < 3; i++) {
     const x = 0.6 + i * 4.1;
@@ -417,16 +460,16 @@ async function icon(Comp, color = "FFFFFF", size = 256) {
     { text: "Visit us", options: { fontSize: 13, color: SKY, bold: true, breakLine: true } },
     { text: "Ho Chi Minh City, Vietnam", options: { fontSize: 22, bold: true, color: WHITE } },
   ], { objectName: "a4-t2", x: 7.6, y: 5.25, w: 4.9, h: 1.1, valign: "middle" });
-  s.addNotes("So, what's next? Come and meet us here in Bali, at any coffee break. Start small with a few client files and see how we work. Then grow with us as trust builds. You can call us anytime at +84 902 343 218.");
+  s.addNotes("So, where do we go from here? Let's talk over coffee during the conference breaks. If it feels like a good fit, start with a pilot of a few client files and see our quality first-hand. Then we grow the scope together as trust and volume build. You can reach us anytime at +84 902 343 218.");
 
-  // ---------- 12. Thank you ----------
+  // ---------- 14. Thank you ----------
   s = pres.addSlide({ masterName: "Lotus Dark", sectionTitle: "Next Steps" });
   card(s, "a1-logocard", 0.8, 0.75, 3.6, 1.05, WHITE);
   s.addImage({ objectName: "a1-logo", path: A("logo.png"), x: 1.05, y: 0.94, w: 3.1, h: 0.775 });
   s.addText("Thank You", { placeholder: "title" });
-  s.addText("Lotus BPO Company Limited · Your accounting & tax team in Vietnam", { placeholder: "body" });
-  T(s, "Questions? We are happy to talk.", { objectName: "a2-q", x: 0.8, y: 5.85, w: 8.6, h: 0.45, fontSize: 16, color: SKY, bold: true });
-  s.addNotes("Thank you for your time. We are happy to answer any questions, here or after the session.");
+  s.addText("Lotus BPO Company Limited · Your trusted accounting & tax partner", { placeholder: "body" });
+  T(s, "Questions? We would be glad to hear from you.", { objectName: "a2-q", x: 0.8, y: 5.85, w: 8.6, h: 0.45, fontSize: 16, color: SKY, bold: true });
+  s.addNotes("Thank you for your time and attention. I would be glad to take any questions, here or during the breaks.");
 
   await pres.writeFile({ fileName: OUT });
   if (SKILL) {
