@@ -1,0 +1,150 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Lotus BPO Brochure</title>
+<style>
+:root { --navy:#1F2A6B; --red:#C8100A; --blue:#22428E; --sky:#5B7BC4; --mist:#E8ECF7; --tint:#F3F5FB; --ink:#1A1F36; --gray:#5F6577; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { background:#fff; }
+body { font-family: Carlito, Calibri, Arial, sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+h1,h2,h3 { color:var(--navy); line-height:1.1; }
+.eyebrow { font-size:8.5pt; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--red); margin-bottom:2.5mm; }
+.dot { display:inline-flex; flex:none; align-items:center; justify-content:center; width:10mm; height:10mm; border-radius:50%; background:var(--navy); padding:2.6mm; }
+.dot.red { background:var(--red); } .dot.blue { background:var(--blue); } .dot.sm { width:8mm; height:8mm; padding:2mm; }
+.dot svg { width:100%; height:100%; }
+.row { display:flex; gap:3.5mm; align-items:flex-start; }
+.row h3 { font-size:12pt; margin-bottom:.6mm; }
+.row p { font-size:9.8pt; color:var(--gray); line-height:1.3; }
+.logo-card { background:#fff; border-radius:3mm; padding:3.5mm 5mm; display:inline-block; }
+.logo-card img { height:13mm; display:block; }
+.water { position:absolute; opacity:.09; pointer-events:none; }
+
+@page { size: 297mm 210mm; margin:0; }
+.page { width:297mm; height:210mm; display:flex; page-break-after:always; overflow:hidden; }
+.page:last-child { page-break-after:auto; }
+.panel { position:relative; height:210mm; padding:13mm 10mm 11mm; display:flex; flex-direction:column; }
+.w97 { width:97mm; } .w100 { width:100mm; }
+.dark { background:var(--navy); color:#fff; } .dark h1, .dark h2, .dark h3 { color:#fff; }
+.tint { background:var(--tint); }
+h2 { font-size:19pt; margin-bottom:5mm; }
+.stack > * + * { margin-top:7.5mm; }
+.stats { display:grid; grid-template-columns:1fr 1fr; gap:3.5mm; margin-top:8mm; }
+.stat { background:var(--tint); border-radius:2.5mm; padding:4.5mm 4mm; }
+.stat b { display:block; font-size:22pt; color:var(--red); line-height:1; }
+.stat span { display:block; font-size:9.5pt; font-weight:700; color:var(--navy); margin-top:1.2mm; }
+.stat small { display:block; font-size:8pt; color:var(--gray); margin-top:.6mm; line-height:1.25; }
+.stat.hl { background:var(--navy); } .stat.hl b, .stat.hl span { color:#fff; } .stat.hl small { color:var(--mist); }
+.lead { font-size:12pt; line-height:1.45; }
+.market { background:#fff; border-radius:2.5mm; padding:4mm 4mm; }
+.market + .market { margin-top:4mm; }
+.market h3 { font-size:11pt; letter-spacing:.06em; display:flex; align-items:center; gap:2mm; }
+.market h3 .pin { width:3.6mm; height:3.6mm; display:inline-flex; }
+.market p { font-size:9.5pt; color:var(--ink); line-height:1.3; margin-top:.8mm; }
+.market p em { font-style:normal; font-weight:700; color:var(--red); }
+.promise { margin-top:auto; background:var(--navy); color:#fff; border-radius:2.5mm; padding:3.5mm 4mm; font-size:9.3pt; line-height:1.35; }
+.promise b { color:#fff; display:block; font-size:10.5pt; margin-bottom:.8mm; }
+.steps { counter-reset:s; }
+.step { display:flex; gap:3.5mm; align-items:flex-start; }
+.step + .step { margin-top:5mm; }
+.serve { margin-top:9mm; } .serve div { display:flex; align-items:center; gap:3mm; font-size:11pt; font-weight:700; color:var(--navy); } .serve div + div { margin-top:3mm; }
+.num { flex:none; width:8mm; height:8mm; border-radius:50%; background:var(--red); color:#fff; font-weight:700; font-size:11pt; display:flex; align-items:center; justify-content:center; }
+.step h3 { font-size:11.5pt; } .step p { font-size:9.5pt; color:var(--gray); line-height:1.3; margin-top:.5mm; }
+.contact { margin-top:auto; background:var(--navy); border-radius:3mm; padding:5mm; color:#fff; }
+.contact .eyebrow { color:var(--sky); }
+.contact .line { display:flex; align-items:center; gap:3mm; font-size:12.5pt; font-weight:700; }
+.contact .line + .line { margin-top:3mm; }
+.reg { font-size:7.5pt; color:var(--gray); margin-top:3mm; }
+.cover h1 { font-size:30pt; margin-top:22mm; }
+.cover .sub { font-size:12pt; color:var(--mist); margin-top:5mm; line-height:1.35; }
+.cover .markets { margin-top:auto; }
+.cover .markets div { display:flex; align-items:center; gap:2.5mm; font-size:11.5pt; font-weight:700; }
+.cover .markets div + div { margin-top:2.6mm; }
+.cover .markets .dot { width:7mm; height:7mm; padding:1.7mm; }
+.cover .tag { margin-top:7mm; font-size:9.5pt; color:var(--sky); font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.svc { display:flex; gap:3.5mm; align-items:flex-start; }
+.svc + .svc { margin-top:7mm; }
+.svc h3 { font-size:12pt; } .svc p { font-size:9.8pt; color:var(--gray); line-height:1.3; margin-top:.5mm; }
+.case { margin-top:auto; background:var(--tint); border-radius:2.5mm; padding:3.5mm 4mm; }
+.case b { color:var(--red); font-size:10.5pt; display:block; margin-bottom:.8mm; }
+.case p { font-size:9.2pt; line-height:1.35; }
+</style></head><body>
+
+<!-- OUTSIDE: inside flap | back | front cover -->
+<section class="page">
+  <div class="panel w97 tint">
+    <div class="eyebrow">Why Lotus BPO</div>
+    <h2>Why Firms Partner With Us</h2>
+    <div class="stack">
+      <div class="row"><span class="dot sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M560 224h-29.5c-8.8-20-21.6-37.7-37.4-52.5L512 96h-32c-29.4 0-55.4 13.5-73 34.3-7.6-1.1-15.1-2.3-23-2.3H256c-77.4 0-141.9 55-156.8 128H56c-14.8 0-26.5-13.5-23.5-28.8C34.7 215.8 45.4 208 57 208h1c3.3 0 6-2.7 6-6v-20c0-3.3-2.7-6-6-6-28.5 0-53.9 20.4-57.5 48.6C-3.9 258.8 22.7 288 56 288h40c0 52.2 25.4 98.1 64 127.3V496c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16v-48h128v48c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16v-80.7c11.8-8.9 22.3-19.4 31.3-31.3H560c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16zm-128 64c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM256 96h128c5.4 0 10.7.4 15.9.8 0-.3.1-.5.1-.8 0-53-43-96-96-96s-96 43-96 96c0 2.1.5 4.1.6 6.2 15.2-3.9 31-6.2 47.4-6.2z"></path></svg></span><div><h3>Cost Efficiency</h3><p>Skilled work at a lower cost than hiring locally.</p></div></div><div class="row"><span class="dot blue sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg></span><div><h3>Faster Turnaround</h3><p>Our time zone keeps work moving while your office is closed.</p></div></div><div class="row"><span class="dot sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"></path></svg></span><div><h3>Platform Ready</h3><p>Fluent in QuickBooks, Xero, CaseWare and CCH iFirm.</p></div></div><div class="row"><span class="dot blue sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM464 96H345.94c-21.38 0-32.09 25.85-16.97 40.97l32.4 32.4L288 242.75l-73.37-73.37c-12.5-12.5-32.76-12.5-45.25 0l-68.69 68.69c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0L192 237.25l73.37 73.37c12.5 12.5 32.76 12.5 45.25 0l96-96 32.4 32.4c15.12 15.12 40.97 4.41 40.97-16.97V112c.01-8.84-7.15-16-15.99-16z"></path></svg></span><div><h3>Scale on Demand</h3><p>Handle busy-season peaks without adding headcount.</p></div></div><div class="row"><span class="dot sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M622.3 271.1l-115.2-45c-4.1-1.6-12.6-3.7-22.2 0l-115.2 45c-10.7 4.2-17.7 14-17.7 24.9 0 111.6 68.7 188.8 132.9 213.9 9.6 3.7 18 1.6 22.2 0C558.4 489.9 640 420.5 640 296c0-10.9-7-20.7-17.7-24.9zM496 462.4V273.3l95.5 37.3c-5.6 87.1-60.9 135.4-95.5 151.8zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm96 40c0-2.5.8-4.8 1.1-7.2-2.5-.1-4.9-.8-7.5-.8h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c6.8 0 13.3-1.5 19.2-4-54-42.9-99.2-116.7-99.2-212z"></path></svg></span><div><h3>Confidentiality First</h3><p>Client data handled with care and kept private.</p></div></div><div class="row"><span class="dot blue sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"></path></svg></span><div><h3>Your Clients Stay Yours</h3><p>We work in the background, under your name and standards.</p></div></div>
+    </div>
+  </div>
+
+  <div class="panel w100">
+    <div class="eyebrow">Getting Started</div>
+    <h2>Let's Work Together</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><h3>Talk to Us</h3><p>Tell us about your firm, your clients and the support you need.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Start With a Pilot</h3><p>Begin with a few client files and see our quality first-hand.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Grow Together</h3><p>Expand the scope as trust and volume grow.</p></div></div>
+    </div>
+    <div class="serve">
+      <div class="eyebrow">Who We Serve</div>
+      <div><span class="dot sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path></svg></span> Accounting firms</div>
+      <div><span class="dot blue sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 616 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5.6 9.1.9 13.7.9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1.8-12.1 1.2-18.2 1.2z"></path></svg></span> SMEs &amp; corporations</div>
+      <div><span class="dot sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M443.98 96.25c-11.01-45.22-47.11-82.06-92.01-93.72-32.19-8.36-63 5.1-89.14 24.33-3.25 2.39-6.96 3.73-10.5 5.48l28.32 18.21c7.42 4.77 9.58 14.67 4.8 22.11-4.46 6.95-14.27 9.86-22.11 4.8L162.83 12.84c-20.7-10.85-43.38-16.4-66.81-10.31-44.9 11.67-81 48.5-92.01 93.72-10.13 41.62-.42 80.81 21.5 110.43 23.36 31.57 32.68 68.66 36.29 107.35 4.4 47.16 10.33 94.16 20.94 140.32l7.8 33.95c3.19 13.87 15.49 23.7 29.67 23.7 13.97 0 26.15-9.55 29.54-23.16l34.47-138.42c4.56-18.32 20.96-31.16 39.76-31.16s35.2 12.85 39.76 31.16l34.47 138.42c3.39 13.61 15.57 23.16 29.54 23.16 14.18 0 26.48-9.83 29.67-23.7l7.8-33.95c10.61-46.15 16.53-93.16 20.94-140.32 3.61-38.7 12.93-75.78 36.29-107.35 21.95-29.61 31.66-68.8 21.53-110.43z"></path></svg></span> Professional corporations</div>
+      <div><span class="dot blue sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zM104 424c0 13.3 10.7 24 24 24s24-10.7 24-24-10.7-24-24-24-24 10.7-24 24zm216-135.4v49c36.5 7.4 64 39.8 64 78.4v41.7c0 7.6-5.4 14.2-12.9 15.7l-32.2 6.4c-4.3.9-8.5-1.9-9.4-6.3l-3.1-15.7c-.9-4.3 1.9-8.6 6.3-9.4l19.3-3.9V416c0-62.8-96-65.1-96 1.9v26.7l19.3 3.9c4.3.9 7.1 5.1 6.3 9.4l-3.1 15.7c-.9 4.3-5.1 7.1-9.4 6.3l-31.2-4.2c-7.9-1.1-13.8-7.8-13.8-15.9V416c0-38.6 27.5-70.9 64-78.4v-45.2c-2.2.7-4.4 1.1-6.6 1.9-18 6.3-37.3 9.8-57.4 9.8s-39.4-3.5-57.4-9.8c-7.4-2.6-14.9-4.2-22.6-5.2v81.6c23.1 6.9 40 28.1 40 53.4 0 30.9-25.1 56-56 56s-56-25.1-56-56c0-25.3 16.9-46.5 40-53.4v-80.4C48.5 301 0 355.8 0 422.4v44.8C0 491.9 20.1 512 44.8 512h358.4c24.7 0 44.8-20.1 44.8-44.8v-44.8c0-72-56.8-130.3-128-133.8z"></path></svg></span> Medical practices</div>
+    </div>
+    <div class="contact">
+      <div class="eyebrow">Contact Us</div>
+      <div class="line"><span class="dot red sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg></span> +84 902 343 218</div>
+      <div class="line"><span class="dot red sm"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span> Ho Chi Minh City, Vietnam</div>
+    </div>
+    <div class="reg">Lotus BPO Company Limited · Enterprise No. 0318715056</div>
+  </div>
+
+  <div class="panel w100 dark cover">
+    <img class="water" src="../assets/lotus-mark-white.png" style="width:150mm; right:-45mm; bottom:28mm;">
+    <div><span class="logo-card"><img src="../assets/logo.png" alt="Lotus BPO"></span></div>
+    <h1>Your Trusted Accounting &amp; Tax Partner</h1>
+    <div class="sub">Bookkeeping, tax preparation and financial reporting support for accounting firms and growing businesses.</div>
+    <div class="markets">
+      <div><span class="dot red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span> Canada</div><div><span class="dot red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span> Australia</div><div><span class="dot red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span> United States</div><div><span class="dot red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span> Singapore</div>
+      <div class="tag">One dedicated team in Vietnam</div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE: who we are | what we do | where we work -->
+<section class="page">
+  <div class="panel w100">
+    <div class="eyebrow">About Us</div>
+    <h2>Who We Are</h2>
+    <p class="lead">Lotus BPO is an accounting and tax support company based in Ho Chi Minh City, Vietnam.</p>
+    <p class="lead" style="margin-top:3.5mm">We act as an extension of your team, handling bookkeeping, tax preparation and financial clean-ups, so you can focus on advising clients and growing your practice.</p>
+    <div class="stats">
+      <div class="stat hl"><b>2024</b><span>Founded</span><small>Registered in Ho Chi Minh City</small></div>
+      <div class="stat"><b>4</b><span>Markets served</span><small>Canada, Australia, US, Singapore</small></div>
+      <div class="stat"><b>4</b><span>Core platforms</span><small>QuickBooks, Xero, CaseWare, CCH iFirm</small></div>
+      <div class="stat"><b>6 yrs</b><span>Largest rebuild</span><small>Six years of records, 2021–2026</small></div>
+    </div>
+    <div class="case">
+      <b>Humans in the lead</b>
+      <p>Skilled accountants do the work, your team makes the final call, and your clients remain yours.</p>
+    </div>
+  </div>
+
+  <div class="panel w100" style="border-left:.3mm solid var(--mist); border-right:.3mm solid var(--mist);">
+    <div class="eyebrow">Our Services</div>
+    <h2>What We Do</h2>
+    <div class="svc"><span class="dot "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg></span><div><h3>Bookkeeping & Accounting</h3><p>Accurate, reconciled books in QuickBooks, Xero and CaseWare.</p></div></div><div class="svc"><span class="dot blue"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM64 72c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8V72zm0 80v-16c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8zm144 263.88V440c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-24.29c-11.29-.58-22.27-4.52-31.37-11.35-3.9-2.93-4.1-8.77-.57-12.14l11.75-11.21c2.77-2.64 6.89-2.76 10.13-.73 3.87 2.42 8.26 3.72 12.82 3.72h28.11c6.5 0 11.8-5.92 11.8-13.19 0-5.95-3.61-11.19-8.77-12.73l-45-13.5c-18.59-5.58-31.58-23.42-31.58-43.39 0-24.52 19.05-44.44 42.67-45.07V232c0-4.42 3.58-8 8-8h16c4.42 0 8 3.58 8 8v24.29c11.29.58 22.27 4.51 31.37 11.35 3.9 2.93 4.1 8.77.57 12.14l-11.75 11.21c-2.77 2.64-6.89 2.76-10.13.73-3.87-2.43-8.26-3.72-12.82-3.72h-28.11c-6.5 0-11.8 5.92-11.8 13.19 0 5.95 3.61 11.19 8.77 12.73l45 13.5c18.59 5.58 31.58 23.42 31.58 43.39 0 24.53-19.05 44.44-42.67 45.07z"></path></svg></span><div><h3>Tax Return Preparation</h3><p>Canadian T2 and Australian BAS, prepared for your firm to review and submit.</p></div></div><div class="svc"><span class="dot "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M32 0C14.3 0 0 14.3 0 32v464c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V32C64 14.3 49.7 0 32 0zm267.9 303.6c-57.2-15.1-111.7-28.8-203.9 11.1V384c185.7-92.2 221.7 53.3 397.5-23.1 11.4-5 18.5-16.5 18.5-28.8v-36c-43.6 17.3-80.2 24.1-112.1 24.1-37.4-.1-68.9-8.4-100-16.6zm0-96c-57.2-15.1-111.7-28.8-203.9 11.1v61.5c94.8-37.6 154.6-22.7 212.1-7.6 57.2 15.1 111.7 28.8 203.9-11.1V200c-43.6 17.3-80.2 24.1-112.1 24.1-37.4 0-68.9-8.3-100-16.5zm9.5-125.9c51.8 15.6 97.4 29 202.6-20.1V30.8c0-25.1-26.8-38.1-49.4-26.6C291.3 91.5 305.4-62.2 96 32.4v151.9c94.8-37.5 154.6-22.7 212.1-7.6 57.2 15 111.7 28.7 203.9-11.1V96.7c-53.6 23.5-93.3 31.4-126.1 31.4s-59-7.8-85.7-15.9c-4-1.2-8.1-2.4-12.1-3.5V75.5c7.2 2 14.3 4.1 21.3 6.2zM160 128.1c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16-7.2 16-16 16zm0-55.8c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm64 47.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16zm0-55.9c-8.8 0-16-7.1-16-16 0-8.8 7.2-16 16-16s16 7.1 16 16c0 8.8-7.2 16-16 16z"></path></svg></span><div><h3>US Tax Filing & Consulting</h3><p>Tax filing and practical tax and business advice for US SMEs.</p></div></div><div class="svc"><span class="dot blue"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg></span><div><h3>Annual Financial Statements</h3><p>Prepared for directors' review and the AGM (Singapore).</p></div></div><div class="svc"><span class="dot red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#ffffff" style="color:#ffffff" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg></span><div><h3>Financial Reconstruction</h3><p>Catch-up and clean-up of incomplete records, even years back.</p></div></div>
+    <div class="case">
+      <b>Case study: six years rebuilt</b>
+      <p>For a dentistry professional corporation in Canada, we rebuilt and reconciled six years of records (2021–2026), ready for the accountant's review and tax filing.</p>
+    </div>
+  </div>
+
+  <div class="panel w97 tint">
+    <div class="eyebrow">Where We Work</div>
+    <h2>Four Markets, One Team</h2>
+    <div class="market"><h3><span class="pin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#C8100A" style="color:#C8100A" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span>CANADA</h3><p><em>Alberta & Ontario.</em> Bookkeeping in QuickBooks & CaseWare, T2 preparation and financial reconstruction for professional corporations, corporations and SMEs.</p></div><div class="market"><h3><span class="pin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#C8100A" style="color:#C8100A" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span>AUSTRALIA</h3><p><em>Healthcare & SMEs.</em> Bookkeeping in Xero and quarterly BAS preparation for medical practices and SMEs.</p></div><div class="market"><h3><span class="pin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#C8100A" style="color:#C8100A" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span>UNITED STATES</h3><p><em>Tax & advisory.</em> Tax return preparation and filing, plus tax and business consulting for SMEs.</p></div><div class="market"><h3><span class="pin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" color="#C8100A" style="color:#C8100A" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></span>SINGAPORE</h3><p><em>Accounting & reporting.</em> Bookkeeping in QuickBooks & Xero and annual financial statements for the AGM.</p></div>
+    <div class="promise"><b>We prepare. You file.</b>When we work through an accounting firm, we prepare the work and the firm reviews and submits. The final sign-off is always yours.</div>
+  </div>
+</section>
+</body></html>
